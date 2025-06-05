@@ -54,12 +54,12 @@ jobs:
       - run: dart compile exe bin/drc.dart -v -o build/${{ matrix.output-name }}
       - run: flutter build ${{ matrix.platfrom }}
       - name: Upload Command Tools
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: drc-cli-${{ matrix.platfrom }}
           path: build/${{ matrix.output-name }}
       - name: Upload Client
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: drc-client-${{ matrix.platfrom }}
           path: ${{ matrix.bundle-path }}
